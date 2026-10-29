@@ -38,5 +38,8 @@
     "@deepseek-ai/cordis": "0.2.1-rc.2",
     "@deepseek-ai/dsh-skill": "0.2.1-rc.2",
     "yaml": "^2.8.1"
+  },
+  "dependencies": {
+    "yaml": "^2.8.1"
   }
 }
