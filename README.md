@@ -70,7 +70,7 @@ Restart or refresh the active session if required by your DSH setup. DSH discove
 
 ### Option B — install as a DSH bundle
 
-The repository also contains `package.json`, `index.js`, and `cordis.patch.yml` for a DSH bundle. From a DSH-supported shell, install it into a configured profile:
+The repository also contains `package.json`, `index.js`, and `cordis.patch.yml` for a DSH bundle. The profile must already load `@deepseek-ai/dsh-skill` and the model-facing `@deepseek-ai/dsh-tool-skill` consumer; otherwise the registered skill has no way to appear in the prompt. From a DSH-supported shell, install it into a configured profile:
 
 ```bash
 dsh plugin --profile web add github:mulqizamzam/mulqi-rearearea#main
