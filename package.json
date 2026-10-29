@@ -4,8 +4,32 @@
   "version": "0.2.1",
   "type": "module",
   "main": "index.js",
-  "files": ["index.js", "cordis.patch.yml", "SKILL.md", "references/", "templates/", "README.md", "LICENSE", "CHANGELOG.md", "DESIGN.md"],
-  "engines": { "dsh": "=0.2.1-rc.2", "node": ">=22" },
-  "peerDependencies": { "@deepseek-ai/dsh-skill": "0.2.1-rc.2" },
-  "dsh": { "manifestVersion": 1, "bundle": { "patch": "./cordis.patch.yml" } }
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "SKILL.md",
+    "references/",
+    "templates/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "DESIGN.md",
+    "tests/"
+  ],
+  "engines": {
+    "dsh": "=0.2.1-rc.2",
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": "0.2.1-rc.2"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test"
+  }
 }
