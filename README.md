@@ -142,3 +142,10 @@ The port preserves the upstream workflow and template structure while adding DSH
 - Upstream licence: MIT, included in this repository
 - DSH compatibility target: [DeepSeek Harness v0.2.1-rc.2](https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-rc.2)
 - This community port is not an official DeepSeek product and is not endorsed by the upstream authors.
+
+
+## Repository description
+
+Suggested GitHub About/Description text (copy into the repository settings):
+
+> DeepSeek Harness (DSH) native plugin for authorised, evidence-led software reconstruction. Includes safe examination guidance, parity checklists, regression review, iterative gap-fixing, and operator-approved self-learning. Targets DSH 0.2.1-rc.2.
