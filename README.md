@@ -55,9 +55,17 @@ First deliverable: an inventory and proposed parity checklist for me to review�
 
 This repository targets **DSH v0.2.1-rc.2**. The harness skill loader supports directory skills containing `SKILL.md`, with kebab-case names and YAML frontmatter. Choose either approach below.
 
-### Option A — project-local skill
+### Option A — project-local skill (recommended for beginners)
 
-From the project root where you want DSH to use the skill, clone the repository and copy the skill bundle:
+This method avoids package installation. Make sure your DSH profile already includes the official filesystem skill loader and model-facing skill tool. In a typical profile composition, the relevant rows are:
+
+```yaml
+- name: '@deepseek-ai/dsh-skill'
+- name: '@deepseek-ai/dsh-skill-filesystem'
+- name: '@deepseek-ai/dsh-tool-skill'
+```
+
+From the root of the project where DSH will run:
 
 ```bash
 git clone https://github.com/mulqizamzam/mulqi-rearearea.git
@@ -66,7 +74,7 @@ cp mulqi-rearearea/SKILL.md .dsh/skills/reverse-engineer-anything-self-learning-
 cp -R mulqi-rearearea/references mulqi-rearearea/templates .dsh/skills/reverse-engineer-anything-self-learning-loop/
 ```
 
-Restart or refresh the active session if required by your DSH setup. DSH discovers project-local skills below `.dsh/skills`, and the model can load the instructions by skill name.
+Then restart or refresh the DSH session if needed and invoke the skill using `/reverse-engineer-anything-self-learning-loop` or ask the model to use it by name. The full reference/template folders matter because the main skill points to them for safe examination, review, and learning rules.
 
 ### Option B — install as a DSH bundle
 
