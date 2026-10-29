@@ -7,7 +7,6 @@ const pkg = JSON.parse(await read('package.json'));
 const skill = await read('SKILL.md');
 const patch = await read('cordis.patch.yml');
 const index = await read('index.js');
-const pkgRaw = await read('package.json');
 test('bundle targets DSH 0.2.1-rc.2', () => {
  assert.equal(pkg.engines.dsh, '=0.2.1-rc.2');
  assert.equal(pkg.dsh.bundle.patch, './cordis.patch.yml');
