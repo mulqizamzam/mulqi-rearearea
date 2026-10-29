@@ -70,7 +70,15 @@ Restart or refresh the active session if required by your DSH setup. DSH discove
 
 ### Option B — install as a DSH bundle
 
-The repository also contains `package.json`, `index.js`, and `cordis.patch.yml` for a DSH bundle. The profile must already load `@deepseek-ai/dsh-skill` and the model-facing `@deepseek-ai/dsh-tool-skill` consumer; otherwise the registered skill has no way to appear in the prompt. From a DSH-supported shell, install it into a configured profile:
+The repository also includes `package.json`, `index.js`, and `cordis.patch.yml` for direct DSH bundle installation. Before installing, confirm the profile includes the DSH skill registry and model-facing skill consumer:
+
+```yaml
+- name: '@deepseek-ai/dsh-skill'
+- name: '@deepseek-ai/dsh-skill-filesystem'
+- name: '@deepseek-ai/dsh-tool-skill'
+```
+
+From a DSH-supported shell, install into a configured profile:
 
 ```bash
 dsh plugin --profile web add github:mulqizamzam/mulqi-rearearea#main
@@ -78,7 +86,7 @@ dsh --profile web --dump-config
 dsh --profile web
 ```
 
-The bundle declares compatibility with **exactly DSH 0.2.1-rc.2**. Review source before installation and pin a tag/commit for repeatable deployments. This package intentionally has no `prepare` or install-time build script.
+The bundle declares compatibility with **exactly DSH 0.2.1-rc.2**. Review source before installation and pin a tag or commit for repeatable deployments. This package intentionally has no `prepare` or install-time build script. Because a Git-based package runs installed source, review the code and check that your DSH profile’s dependency resolver uses the host’s DSH packages rather than incompatible duplicate copies.
 
 Remove it when no longer needed:
 
