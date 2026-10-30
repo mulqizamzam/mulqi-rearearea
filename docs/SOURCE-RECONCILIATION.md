@@ -44,7 +44,9 @@ The manifest records the original Git blob SHA-1 and reported byte length for ev
 - Git object reconciliation: **PASS** — all 13 archived target blob SHAs and byte lengths match the corresponding upstream Git tree entries and manifest records. This verifies exact Git object identity at the tree level.
 - Local byte-read validator: **not executed** — the environment could not resolve `github.com` for a local clone. Run `npm run validate:completeness` after cloning to independently hash the materialized files.
 - Plugin registration / package structure: prior structural review found the DSH entrypoint, package manifest, and Cordis patch; this is not equivalent to a host boot test.
-- Automated tests (`npm test`), package dry-run (`npm pack --dry-run`), and DSH host boot: **not executed**; local clone was blocked by unavailable DNS/network access.
+- Focused registration unit test: **PASS (2/2)** in a temporary local harness with a minimal YAML parser shim and a fixture SKILL file. This exercises the entrypoint's registration and missing-service guard, but does not validate the real `yaml` dependency or the DSH host API.
+- Exact entrypoint syntax check (`node --check index.js`): **PASS**.
+- Full automated suite (`npm test`), completeness script against the full checkout, package dry-run (`npm pack --dry-run`), and DSH host boot: **not executed**; the repository clone failed because this environment could not resolve `github.com`, and the local checkout/dependencies were therefore unavailable.
 - Install and runtime compatibility: **UNVERIFIED** until installed and booted with DeepSeek Harness `0.2.1-rc.2` and the documented profile services.
 
 ## Reproducibility
