@@ -39,11 +39,12 @@ The manifest records the original Git blob SHA-1 and reported byte length for ev
 
 ## Validation status
 
-- Recursive source inventory: **PASS** — GitHub tree response reported `truncated=false`.
-- Source-to-target manifest: **PASS (declared coverage)** — 13 entries for 13 source blobs; automated verification is provided by `npm run validate:completeness`.
-- Exact archive hash verification: **not yet executed in a local Node environment in this session**. Run the command to verify every archived file against its Git blob SHA-1.
+- Recursive source inventory: **PASS** — upstream and target Git tree responses both reported `truncated=false`.
+- Source-to-target coverage: **PASS** — 13 upstream blobs, 13 archived files, and 13 manifest entries; no missing or extra source items.
+- Git object reconciliation: **PASS** — all 13 archived target blob SHAs and byte lengths match the corresponding upstream Git tree entries and manifest records. This verifies exact Git object identity at the tree level.
+- Local byte-read validator: **not executed** — the environment could not resolve `github.com` for a local clone. Run `npm run validate:completeness` after cloning to independently hash the materialized files.
 - Plugin registration / package structure: prior structural review found the DSH entrypoint, package manifest, and Cordis patch; this is not equivalent to a host boot test.
-- Automated tests: **not executed in a DSH runtime in this session**.
+- Automated tests (`npm test`), package dry-run (`npm pack --dry-run`), and DSH host boot: **not executed**; local clone was blocked by unavailable DNS/network access.
 - Install and runtime compatibility: **UNVERIFIED** until installed and booted with DeepSeek Harness `0.2.1-rc.2` and the documented profile services.
 
 ## Reproducibility
