@@ -14,7 +14,11 @@
     "LICENSE",
     "CHANGELOG.md",
     "DESIGN.md",
-    "tests/"
+    "tests/",
+    "upstream/",
+    "source-manifest.json",
+    "docs/",
+    "scripts/"
   ],
   "engines": {
     "dsh": "=0.2.1-rc.2",
@@ -32,7 +36,8 @@
     }
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "validate:completeness": "node scripts/validate-completeness.mjs"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "0.2.1-rc.2",
