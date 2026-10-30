@@ -157,3 +157,73 @@ The port preserves the upstream workflow and template structure while adding DSH
 Suggested GitHub About/Description text (copy into the repository settings):
 
 > DeepSeek Harness (DSH) native plugin for authorised, evidence-led software reconstruction. Includes safe examination guidance, parity checklists, regression review, iterative gap-fixing, and operator-approved self-learning. Targets DSH 0.2.1-rc.2.
+
+
+## Four installation methods
+
+All four methods below deliver the DSH skill and its `references/` and `templates/`. The first installs the packaged DSH plugin; the other three install the skill files through the DSH skill filesystem loader. Confirm the profile has `@deepseek-ai/dsh-skill`, `@deepseek-ai/dsh-skill-filesystem`, and `@deepseek-ai/dsh-tool-skill` configured before using a filesystem-based method.
+
+### Method 1 — DSH plugin CLI from GitHub (bundle)
+
+Use this when you want the plugin registration and package metadata:
+
+```bash
+dsh plugin --profile web add github:mulqizamzam/mulqi-rearearea#main
+dsh --profile web --dump-config
+dsh --profile web
+```
+
+Replace `web` with your configured profile. Review the repository and pin a tag or commit for production/repeatable use.
+
+### Method 2 — Clone with Git, then install project-locally
+
+Use this when you want to inspect or modify the files before enabling the skill:
+
+```bash
+git clone https://github.com/mulqizamzam/mulqi-rearearea.git
+mkdir -p .dsh/skills/reverse-engineer-anything-self-learning-loop
+cp mulqi-rearearea/SKILL.md .dsh/skills/reverse-engineer-anything-self-learning-loop/
+cp -R mulqi-rearearea/references mulqi-rearearea/templates .dsh/skills/reverse-engineer-anything-self-learning-loop/
+```
+
+Run DSH from that project using the profile's configured project-local skill directory.
+
+### Method 3 — Download ZIP, then install project-locally
+
+Use this if Git is unavailable. Download the repository ZIP from [GitHub](https://github.com/mulqizamzam/mulqi-rearearea/archive/refs/heads/main.zip), extract it, then run these commands from the project root (adjust the extracted folder name if needed):
+
+```bash
+mkdir -p .dsh/skills/reverse-engineer-anything-self-learning-loop
+cp mulqi-rearearea-main/SKILL.md .dsh/skills/reverse-engineer-anything-self-learning-loop/
+cp -R mulqi-rearearea-main/references mulqi-rearearea-main/templates .dsh/skills/reverse-engineer-anything-self-learning-loop/
+```
+
+### Method 4 — Manual copy into your configured DSH skills directory
+
+Use this for managed workstations or an existing DSH skills directory. Find the skills root configured for `@deepseek-ai/dsh-skill-filesystem` in your own profile; do not assume a universal global path. Create a folder named `reverse-engineer-anything-self-learning-loop` there and copy these items from this repository:
+
+- `SKILL.md`
+- the complete `references/` directory
+- the complete `templates/` directory
+
+Restart/refresh the DSH session if your loader requires it. Invoke by asking DSH to use `reverse-engineer-anything-self-learning-loop`. Do not copy `upstream/` into the active skills directory: it is a preservation archive, not runtime instructions.
+
+## Source preservation, audit and validation
+
+This port now includes a complete source snapshot and a machine-readable reconciliation:
+
+- `upstream/` — all 13 source files from the inspected upstream Git tree, preserved verbatim and kept out of the runtime skill path.
+- `source-manifest.json` — source path, upstream Git blob SHA-1, byte length, archive path, target mapping, disposition, and transformation notes for every source item.
+- `docs/SOURCE-RECONCILIATION.md` — coverage, activation boundaries, transformations, and explicit validation limitations.
+- `scripts/validate-completeness.mjs` — verifies each archived file against the recorded Git blob SHA-1 and byte length, and checks required target/package files.
+
+Run the reproducible checks from the repository root:
+
+```bash
+npm install
+npm run validate:completeness
+npm test
+npm pack --dry-run
+```
+
+The source archive is intentionally non-executable. The adapted root `SKILL.md` is the active instruction surface and cannot override the DSH host's system/developer instructions, safety policies, or tool permissions. Preserving original text does not grant it authority. Compatibility is pinned to DSH `0.2.1-rc.2`; the pin and static package checks do not substitute for a real DSH boot/integration test. See [the reconciliation report](docs/SOURCE-RECONCILIATION.md) for exact status.
