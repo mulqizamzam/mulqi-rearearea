@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "plugin": "mulqi-rearearea",
+  "target": "DeepSeek Harness 0.2.1-rc.2",
+  "source_repository": "https://github.com/Speedrunlab/reverse-engineer-anything-self-learning-loop",
+  "source_ref": "main",
+  "source_commit": "a0b4f1ecff591100d207ddcc799bcb5bb769f031",
+  "inventory_complete": true,
+  "hash_algorithm": "Git blob SHA-1 (SHA-1 of `blob <byte-length>\\0<content>`); not a raw-file SHA-1",
+  "source_item_count": 13,
+  "entries": [
+    {
+      "source_path": "CHANGELOG.md",
+      "git_blob_sha1": "00ad1299eddf69fc8eb58c0bb52b5cc117890107",
+      "size_bytes": 1266,
+      "archive_path": "upstream/CHANGELOG.md",
+      "disposition": "reference_only",
+      "target_path": "CHANGELOG.md",
+      "notes": "Historical release notes retained verbatim; target changelog separately records the port."
+    },
+    {
+      "source_path": "LICENSE",
+      "git_blob_sha1": "80a222438a3c3360ed06802a611b8490df996284",
+      "size_bytes": 1081,
+      "archive_path": "upstream/LICENSE",
+      "disposition": "preserved_verbatim",
+      "target_path": "LICENSE",
+      "notes": "MIT terms and original copyright retained."
+    },
+    {
+      "source_path": "README.md",
+      "git_blob_sha1": "ca6f025ddb5136d51c15dd4d7aa3735e81d5296b",
+      "size_bytes": 7809,
+      "archive_path": "upstream/README.md",
+      "disposition": "reference_only",
+      "target_path": "Original installation guidance is retained as history; target README is DSH-specific."
+    },
+    {
+      "source_path": "SKILL.md",
+      "git_blob_sha1": "41e5d885e0b9f89f7ce311c13d28d18c769ecabf",
+      "size_bytes": 19840,
+      "archive_path": "upstream/SKILL.md",
+      "disposition": "adapted_plus_verbatim",
+      "target_path": "SKILL.md",
+      "notes": "Original preserved under upstream/; target SKILL.md adapted for DSH and adds explicit untrusted-content/host-policy boundaries."
+    },
+    {
+      "source_path": "references/examine.md",
+      "git_blob_sha1": "6198cbe396473033729c5257435265f33a225e3f",
+      "size_bytes": 11756,
+      "archive_path": "upstream/references/examine.md",
+      "disposition": "preserved_verbatim",
+      "target_path": "references/examine.md",
+      "notes": "Byte-identical Git blob also used as active reference."
+    },
+    {
+      "source_path": "references/fix-recipes.md",
+      "git_blob_sha1": "4c25dfe9bcc04aebbad3869b6decb05353ee9c27",
+      "size_bytes": 3739,
+      "archive_path": "upstream/references/fix-recipes.md",
+      "disposition": "preserved_verbatim",
+      "target_path": "references/fix-recipes.md",
+      "notes": "Byte-identical Git blob also used as active reference."
+    },
+    {
+      "source_path": "references/learning-loop.md",
+      "git_blob_sha1": "b519dbe7e74764332c156903a715fc0b9b42d51",
+      "size_bytes": 6457,
+      "archive_path": "upstream/references/learning-loop.md",
+      "disposition": "preserved_verbatim",
+      "target_path": "references/learning-loop.md",
+      "notes": "Byte-identical Git blob also used as active reference."
+    },
+    {
+      "source_path": "references/parity-checklist.md",
+      "git_blob_sha1": "5224941728ac6eeebc1986108ddcef1500b32940",
+      "size_bytes": 6046,
+      "archive_path": "upstream/references/parity-checklist.md",
+      "disposition": "preserved_verbatim",
+      "target_path": "references/parity-checklist.md",
+      "notes": "Byte-identical Git blob also used as active reference."
+    },
+    {
+      "source_path": "references/review.md",
+      "git_blob_sha1": "86ddeb4cf9d13655a666add85d3bb5c62bf1c559",
+      "size_bytes": 4630,
+      "archive_path": "upstream/references/review.md",
+      "disposition": "preserved_verbatim",
+      "target_path": "references/review.md",
+      "notes": "Byte-identical Git blob also used as active reference."
+    },
+    {
+      "source_path": "templates/gap-report.md",
+      "git_blob_sha1": "709778eecc4c9fadcb9a54b475622c3e00fc92ef",
+      "size_bytes": 922,
+      "archive_path": "upstream/templates/gap-report.md",
+      "disposition": "preserved_verbatim",
+      "target_path": "templates/gap-report.md",
+      "notes": "Byte-identical Git blob also used as active template."
+    },
+    {
+      "source_path": "templates/iteration-plan.md",
+      "git_blob_sha1": "8f61795f38b22b77834c05865ce1ff5dbbdcca76",
+      "size_bytes": 607,
+      "archive_path": "upstream/templates/iteration-plan.md",
+      "disposition": "preserved_verbatim",
+      "target_path": "templates/iteration-plan.md",
+      "notes": "Byte-identical Git blob also used as active template."
+    },
+    {
+      "source_path": "templates/parity-checklist.md",
+      "git_blob_sha1": "f3a7d289c8d0533a4423cfa9226d55c21ede83dd",
+      "size_bytes": 1059,
+      "archive_path": "upstream/templates/parity-checklist.md",
+      "disposition": "preserved_verbatim",
+      "target_path": "templates/parity-checklist.md",
+      "notes": "Byte-identical Git blob also used as active template."
+    },
+    {
+      "source_path": "templates/run-ledger.md",
+      "git_blob_sha1": "4d821fa7e226f0ec9025601c348235851422e76c",
+      "size_bytes": 1283,
+      "archive_path": "upstream/templates/run-ledger.md",
+      "disposition": "preserved_verbatim",
+      "target_path": "templates/run-ledger.md",
+      "notes": "Byte-identical Git blob also used as active template."
+    }
+  ]
+}
